@@ -141,48 +141,25 @@ export default function CapabilitiesSection() {
   return (
     <section
       id="capabilities"
-      className="relative w-full py-12 sm:py-16 md:py-20 overflow-hidden"
+      className="relative w-full py-20 sm:py-24 md:py-28 overflow-hidden"
     >
-      {/* Sophisticated Grid Background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(231,138,83,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(231,138,83,0.03)_1px,transparent_1px)] bg-[size:80px_80px]"></div>
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-primary/10 rounded-full blur-3xl"></div>
-      </div>
-
-      <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="mb-20"
-        >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm mb-8">
-            <span className="text-xs uppercase tracking-[0.2em] text-white/60 font-semibold">
-              Capabilities
-            </span>
-          </div>
-
+        <div className="mb-12 flex w-full flex-col items-center justify-center text-center">
           <h2
             className={cn(
-              "text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 leading-none",
-              geist.className,
+              "bg-gradient-to-b from-zinc-50 via-zinc-200 to-zinc-400 bg-clip-text text-3xl font-semibold tracking-tight text-transparent sm:text-4xl md:text-5xl",
             )}
           >
-            <span className="bg-gradient-to-r from-white to-white/60 bg-clip-text text-transparent">
-              Applied AI from
-            </span>
-            <br />
-            <span className="bg-gradient-to-r from-white to-white/60 bg-clip-text text-transparent">
-              idea to impact.
-            </span>
+            What We Build
           </h2>
-        </motion.div>
+          <p className="mt-2 max-w-2xl text-xs sm:text-sm text-zinc-400">
+            Applied AI from idea to impact. Real automation solutions that scale your business.
+          </p>
+        </div>
 
-        {/* Capabilities Grid - Masonry Style */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5">
+        {/* Capabilities Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <AnimatePresence>
             {visibleCapabilities.map((capability, index) => {
               const Icon = capability.icon
@@ -194,84 +171,29 @@ export default function CapabilitiesSection() {
                   key={capability.id}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
+                  viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.05 }}
                   onClick={() => setSelectedCapability(isExpanded ? null : capability.id)}
                   onMouseEnter={() => setHoveredId(capability.id)}
                   onMouseLeave={() => setHoveredId(null)}
-                  className={cn(
-                    "relative bg-black p-8 cursor-pointer group transition-all duration-300",
-                    isExpanded && "md:col-span-2 lg:row-span-2",
-                    isHovered && !isExpanded && "bg-white/[0.02]",
-                  )}
+                  className="relative bg-zinc-950 border border-zinc-800 rounded-lg p-6 cursor-pointer group transition-colors duration-300 hover:border-zinc-700"
                 >
-                  {/* Hover gradient effect */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent"></div>
-                  </div>
-
-                  {/* Content */}
-                  <div className="relative z-10">
-                    {/* Icon */}
-                    <div className="mb-6">
-                      <div className={cn(
-                        "inline-flex p-3 rounded-xl border border-white/10 bg-white/5 transition-all duration-300",
-                        isHovered && "border-primary/30 bg-primary/10 scale-110",
-                      )}>
-                        <Icon className="w-6 h-6 text-primary" />
-                      </div>
-                    </div>
-
-                    {/* Title */}
-                    <h3 className={cn(
-                      "text-xl font-semibold text-white mb-3 transition-colors duration-300",
-                      isHovered && "text-primary",
-                    )}>
-                      {capability.title}
-                    </h3>
-
-                    {/* Description - Always visible */}
-                    <p className="text-sm text-white/60 leading-relaxed mb-4">
-                      {capability.description}
-                    </p>
-
-                    {/* Expand indicator */}
-                    <div className="flex items-center gap-2 text-xs text-primary/60 group-hover:text-primary transition-colors">
-                      <span className="uppercase tracking-wider font-medium">
-                        {isExpanded ? "Collapse" : "Learn more"}
-                      </span>
-                      <motion.div
-                        animate={{ x: isHovered ? 4 : 0 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        <svg
-                          className="w-4 h-4"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M9 5l7 7-7 7"
-                          />
-                        </svg>
-                      </motion.div>
+                  {/* Icon */}
+                  <div className="mb-4">
+                    <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-zinc-900 border border-zinc-800">
+                      <Icon className="w-5 h-5 text-[#e78a53]" />
                     </div>
                   </div>
 
-                  {/* Bottom accent line */}
-                  <div className={cn(
-                    "absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-primary to-transparent transition-all duration-500",
-                    isHovered ? "w-full" : "w-0",
-                  )}></div>
+                  {/* Title */}
+                  <h3 className="text-lg font-semibold text-zinc-50 mb-2">
+                    {capability.title}
+                  </h3>
 
-                  {/* Corner accent */}
-                  <div className={cn(
-                    "absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-primary/20 to-transparent opacity-0 transition-opacity duration-300",
-                    isHovered && "opacity-100",
-                  )}></div>
+                  {/* Description */}
+                  <p className="text-sm text-zinc-400 leading-relaxed">
+                    {capability.description}
+                  </p>
                 </motion.div>
               )
             })}
@@ -288,11 +210,11 @@ export default function CapabilitiesSection() {
           >
             <button
               onClick={handleLoadMore}
-              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-b from-primary to-primary/80 text-primary-foreground font-semibold rounded-full hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-zinc-700 text-zinc-300 hover:border-zinc-600 hover:text-zinc-50 transition-colors"
             >
               <span>View All Capabilities</span>
               <svg
-                className="w-5 h-5 group-hover:translate-y-1 transition-transform"
+                className="w-4 h-4"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

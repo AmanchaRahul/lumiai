@@ -45,28 +45,18 @@ export default function TeamSection() {
     <section id="team" className="relative w-full py-24 md:py-32 overflow-hidden">
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="max-w-3xl mx-auto text-center mb-16"
-        >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-zinc-800 bg-zinc-900/50 mb-6">
-            <div className="w-1.5 h-1.5 rounded-full bg-[#e78a53]"></div>
-            <span className="text-xs uppercase tracking-wider text-zinc-500 font-medium">
-              Team
-            </span>
-          </div>
-
-          <h2 className="text-5xl md:text-6xl font-bold tracking-tight text-zinc-50 mb-6">
+        <div className="mb-12 flex w-full flex-col items-center justify-center text-center">
+          <h2
+            className={cn(
+              "bg-gradient-to-b from-zinc-50 via-zinc-200 to-zinc-400 bg-clip-text text-3xl font-semibold tracking-tight text-transparent sm:text-4xl md:text-5xl",
+            )}
+          >
             Who We Are
           </h2>
-
-          <p className="text-lg text-zinc-400 leading-relaxed">
-            A small team solving real automation problems for businesses that need results, not buzzwords.
+          <p className="mt-2 max-w-2xl text-xs sm:text-sm text-zinc-400">
+            A small team solving real automation problems for businesses that need results.
           </p>
-        </motion.div>
+        </div>
 
         {/* Team Grid - Equal height cards */}
         <div className="grid md:grid-cols-3 gap-8">
@@ -80,10 +70,10 @@ export default function TeamSection() {
               className="group relative"
             >
               {/* Card Container - Clean borders, no glows */}
-              <div className="relative h-full border border-zinc-800 bg-zinc-950 p-8 transition-colors hover:border-zinc-700">
+              <div className="relative h-full border border-zinc-800 rounded-lg bg-zinc-950 p-8 transition-colors hover:border-zinc-700">
                 {/* Geometric placeholder (when no image) */}
                 {!member.image && (
-                  <div className="relative aspect-[3/4] bg-zinc-900 border border-zinc-800/50 mb-6 overflow-hidden flex items-center justify-center">
+                  <div className="relative aspect-[3/4] bg-zinc-900 border border-zinc-800/50 rounded-lg mb-6 overflow-hidden flex items-center justify-center">
                     {/* Abstract geometric pattern - minimal */}
                     <div className="relative w-32 h-32">
                       <div className="absolute inset-0 border-2 border-[#e78a53]/20 rotate-45"></div>
@@ -95,7 +85,7 @@ export default function TeamSection() {
 
                 {/* If image exists */}
                 {member.image && (
-                  <div className="relative aspect-[3/4] bg-zinc-900 border border-zinc-800 mb-6 overflow-hidden">
+                  <div className="relative aspect-[3/4] bg-zinc-900 border border-zinc-800 rounded-lg mb-6 overflow-hidden">
                     <img
                       src={member.image}
                       alt={member.name}
@@ -168,7 +158,7 @@ export default function TeamSection() {
             </p>
             <a
               href="/careers"
-              className="inline-flex items-center gap-2 px-6 py-3 border border-zinc-700 text-zinc-300 hover:border-zinc-600 hover:text-zinc-50 transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-zinc-700 text-zinc-300 hover:border-zinc-600 hover:text-zinc-50 transition-colors"
             >
               <span className="font-medium">View Open Roles</span>
               <svg
