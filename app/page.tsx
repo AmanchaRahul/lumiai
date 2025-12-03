@@ -11,6 +11,7 @@ import { FAQSection } from "@/components/faq-section"
 import { StickyFooter } from "@/components/sticky-footer"
 import TeamSection from "@/components/team-section"
 import PartnersSection from "@/components/partners-section"
+import ConnectCTASection from "@/components/connect-cta-section"
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -284,6 +285,9 @@ export default function Home() {
       <div id="faq">
         <FAQSection />
       </div>
+
+      {/* Connect CTA Section */}
+      <ConnectCTASection />
 
       {/* Sticky Footer */}
       <StickyFooter />
