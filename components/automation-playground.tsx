@@ -333,8 +333,44 @@ export function AutomationPlayground() {
         </div>
       </div>
 
+      {/* Animated Arrow pointing to CTA */}
+      <div className="mt-8 flex w-full justify-center">
+        <div className="flex flex-col items-center gap-2">
+          <motion.div
+            animate={{
+              y: [-8, 0, -8],
+            }}
+            transition={{
+              duration: 1.5,
+              ease: "easeInOut",
+              repeat: Infinity,
+              repeatType: "loop",
+            }}
+            className="flex flex-col items-center"
+          >
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="text-[#e78a53]"
+            >
+              <path
+                d="M12 19V5M12 5L5 12M12 5L19 12"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </motion.div>
+          <span className="text-xs text-zinc-400 font-medium">Click to start automation</span>
+        </div>
+      </div>
+
       {/* Country ticker below nodes */}
-      <div className="mt-10 flex w-full justify-center">
+      <div className="mt-6 flex w-full justify-center">
         <div className="relative w-full max-w-4xl overflow-hidden">
           <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-black to-transparent" />
           <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-black to-transparent" />
