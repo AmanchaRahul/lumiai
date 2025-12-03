@@ -12,6 +12,7 @@ import { StickyFooter } from "@/components/sticky-footer"
 import TeamSection from "@/components/team-section"
 import PartnersSection from "@/components/partners-section"
 import ConnectCTASection from "@/components/connect-cta-section"
+import StudioSection from "@/components/studio-section"
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -267,6 +268,9 @@ export default function Home() {
 
       {/* Works Section */}
       <WorksSection />
+
+      {/* Studio Section */}
+      <StudioSection />
 
       {/* Team Section */}
       <TeamSection />
