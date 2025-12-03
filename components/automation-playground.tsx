@@ -95,7 +95,7 @@ export function AutomationPlayground() {
   return (
     <section
       aria-label="LUMI AI automation playground"
-      className="relative z-10 w-full py-20 sm:py-24 md:py-28 overflow-hidden"
+      className="relative z-10 w-full py-12 sm:py-16 md:py-20 overflow-hidden"
     >
       {/* Title floating above canvas */}
       <div className="mb-8 flex w-full flex-col items-center justify-center text-center">

@@ -105,7 +105,7 @@ export default function WorksSection() {
   }
 
   return (
-    <section id="work" className="relative w-full py-20 sm:py-24 md:py-32 overflow-hidden px-4 sm:px-6">
+    <section id="work" className="relative w-full py-12 sm:py-16 md:py-20 overflow-hidden px-4 sm:px-6">
       {/* Background decorations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Grid pattern background */}

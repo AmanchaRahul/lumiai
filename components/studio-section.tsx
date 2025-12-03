@@ -35,7 +35,7 @@ const workflowSteps: WorkflowStep[] = [
 
 export default function StudioSection() {
   return (
-    <section id="studio" className="relative w-full py-20 sm:py-24 md:py-32 overflow-hidden">
+    <section id="studio" className="relative w-full py-12 sm:py-16 md:py-20 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Grid pattern */}

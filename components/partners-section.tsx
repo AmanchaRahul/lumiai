@@ -54,7 +54,7 @@ export default function PartnersSection() {
   return (
     <section
       id="partners"
-      className="relative w-full py-20 sm:py-24 md:py-32 overflow-hidden"
+      className="relative w-full py-12 sm:py-16 md:py-20 overflow-hidden"
     >
       {/* Sophisticated Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">

@@ -141,7 +141,7 @@ export default function CapabilitiesSection() {
   return (
     <section
       id="capabilities"
-      className="relative w-full py-24 sm:py-32 md:py-40 overflow-hidden"
+      className="relative w-full py-12 sm:py-16 md:py-20 overflow-hidden"
     >
       {/* Sophisticated Grid Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">

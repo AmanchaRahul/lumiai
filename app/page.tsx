@@ -164,8 +164,21 @@ export default function Home() {
 
         <div className="flex items-center gap-4">
           <a
-            href="/connect"
             className="font-medium transition-colors hover:text-foreground text-muted-foreground text-sm cursor-pointer"
+            onClick={(e) => {
+              e.preventDefault()
+              const element = document.getElementById("connect")
+              if (element) {
+                const headerOffset = 120
+                const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
+                const offsetPosition = elementPosition - headerOffset
+
+                window.scrollTo({
+                  top: offsetPosition,
+                  behavior: "smooth",
+                })
+              }
+            }}
           >
             Connect
           </a>
@@ -239,12 +252,12 @@ export default function Home() {
                 Partners
               </button>
               <div className="border-t border-border/50 pt-4 mt-4 flex flex-col space-y-3">
-                <a
-                  href="/connect"
-                  className="px-4 py-3 text-lg font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-background/50 cursor-pointer"
+                <button
+                  onClick={() => handleMobileNavClick("connect")}
+                  className="text-left px-4 py-3 text-lg font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-background/50 cursor-pointer"
                 >
                   Connect
-                </a>
+                </button>
                 <a
                   href="/gen-ai-editing"
                   className="px-4 py-3 text-lg font-bold text-center bg-gradient-to-b from-primary to-primary/80 text-primary-foreground rounded-lg shadow-lg hover:-translate-y-0.5 transition-all duration-200"

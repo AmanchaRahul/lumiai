@@ -7,7 +7,7 @@ import { geist } from "@/lib/fonts"
 
 export default function ConnectCTASection() {
   return (
-    <section className="relative w-full py-20 sm:py-24 md:py-32 overflow-hidden">
+    <section id="connect" className="relative w-full py-12 sm:py-16 md:py-20 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Radial gradient */}
