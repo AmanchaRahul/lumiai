@@ -8,7 +8,6 @@ import { AutomationPlayground } from "@/components/automation-playground"
 import { TestimonialsSection } from "@/components/testimonials"
 import { NewReleasePromo } from "@/components/new-release-promo"
 import { FAQSection } from "@/components/faq-section"
-import { PricingSection } from "@/components/pricing-section"
 import { StickyFooter } from "@/components/sticky-footer"
 import TeamSection from "@/components/team-section"
 import PartnersSection from "@/components/partners-section"
@@ -273,11 +272,6 @@ export default function Home() {
 
       {/* Partners Section */}
       <PartnersSection />
-
-      {/* Pricing Section */}
-      <div id="pricing">
-        <PricingSection />
-      </div>
 
       {/* Testimonials Section */}
       <div id="testimonials">
