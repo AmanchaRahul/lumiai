@@ -10,6 +10,7 @@ import { NewReleasePromo } from "@/components/new-release-promo"
 import { FAQSection } from "@/components/faq-section"
 import { PricingSection } from "@/components/pricing-section"
 import { StickyFooter } from "@/components/sticky-footer"
+import TeamSection from "@/components/team-section"
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -265,6 +266,9 @@ export default function Home() {
 
       {/* Works Section */}
       <WorksSection />
+
+      {/* Team Section */}
+      <TeamSection />
 
       {/* Pricing Section */}
       <div id="pricing">
