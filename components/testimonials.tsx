@@ -2,57 +2,57 @@ import { Marquee } from "@/components/magicui/marquee"
 
 const testimonials = [
   {
-    name: "Arjun Mehta",
-    username: "@arjdev",
-    body: "v0 has completely changed the way I build UIs. Generate, copy-paste, done. No more design stress.",
+    name: "Surya K.",
+    username: "@suryaresearch",
+    body: "LUMI AI automated 80% of my Reddit research workflow. The AI-generated comments are natural and engagement is up 45%.",
     img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
   },
   {
-    name: "Sara Lin",
-    username: "@sara.codes",
-    body: "Honestly shocked at how smooth the v0 generated components are out of the box. Just works perfectly.",
+    name: "Dr. Sarah Al-Mansouri",
+    username: "@isma_clinic",
+    body: "Voice AI from LUMI reduced our missed appointment calls by 60%. Patients love the 24/7 multilingual support.",
     img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face",
   },
   {
-    name: "Devon Carter",
-    username: "@devninja",
-    body: "Our team launched a client site in 2 days using v0 components. Saved so much development time.",
+    name: "Abdul Rahman",
+    username: "@abdultech",
+    body: "Their personal reminder AI handles my entire schedule including prayer times. Zero missed appointments anymore.",
     img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
   },
   {
-    name: "Priya Shah",
-    username: "@priyacodes",
-    body: "Generated a few components in v0 and everything blended perfectly with our codebase. Massive W.",
-    img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face",
-  },
-  {
-    name: "Leo Martin",
-    username: "@leobuilds",
-    body: "Found a beautiful hero section in v0, tweaked the prompt, and shipped in 15 minutes. Game changer.",
-    img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
-  },
-  {
-    name: "Chloe Winters",
-    username: "@chloewinters",
-    body: "v0 helped us prototype multiple landing pages without writing CSS once. Pure magic.",
-    img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=face",
-  },
-  {
-    name: "Ayaan Malik",
-    username: "@ayaan_dev",
-    body: "As a solo founder, v0 lets me move fast without sacrificing design quality. Essential tool.",
+    name: "Shivam Gupta",
+    username: "@shivamcomputers",
+    body: "The lead generation system brings us 300+ verified leads weekly. No more manual data entry, pure automation.",
     img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
   },
   {
-    name: "Monica Reeves",
-    username: "@monicareeves",
-    body: "Can't believe how polished the v0 generated components look. Clients are impressed every time.",
+    name: "Priya Deshmukh",
+    username: "@vybeschool",
+    body: "WhatsApp campaign automation tripled our open rates. Setup time dropped by 80%. LUMI AI just works.",
+    img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face",
+  },
+  {
+    name: "Michael Chen",
+    username: "@mchen_ops",
+    body: "Built custom workflow automation for our operations team. Saved 15 hours per week on repetitive tasks.",
+    img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+  },
+  {
+    name: "Fatima Hassan",
+    username: "@fatimamarketing",
+    body: "Their marketing automation handles our entire email and SMS funnel. Personalization at scale, finally.",
+    img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=face",
+  },
+  {
+    name: "Rajesh Patel",
+    username: "@rajesh_hr",
+    body: "HR automation from LUMI accelerated our hiring by 3x. Candidate screening and onboarding runs itself now.",
     img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face",
   },
   {
-    name: "James Roy",
-    username: "@jamesrdev",
-    body: "v0 is a lifesaver when deadlines are tight. Generate a component, tweak, and deploy instantly.",
+    name: "Lisa Wong",
+    username: "@lisawong_cfo",
+    body: "Real-time dashboards and automated reports keep our team informed without manual work. Game changer for us.",
     img: "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=150&h=150&fit=crop&crop=face",
   },
 ]
@@ -105,11 +105,11 @@ export function TestimonialsSection() {
             </button>
           </div>
           <h2 className="from-foreground/60 via-foreground to-foreground/60 dark:from-muted-foreground/55 dark:via-foreground dark:to-muted-foreground/55 mt-5 bg-gradient-to-r bg-clip-text text-center text-4xl font-semibold tracking-tighter text-transparent md:text-[54px] md:leading-[60px] __className_bb4e88 relative z-10">
-            What our users say
+            What our clients say
           </h2>
 
           <p className="mt-5 relative z-10 text-center text-lg text-zinc-500">
-            From intuitive design to powerful features, our app has become an essential tool for users around the world.
+            Real results from businesses that automated with LUMI AI. No fluff, just impact.
           </p>
         </div>
 
