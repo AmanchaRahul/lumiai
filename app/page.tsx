@@ -11,6 +11,7 @@ import { FAQSection } from "@/components/faq-section"
 import { PricingSection } from "@/components/pricing-section"
 import { StickyFooter } from "@/components/sticky-footer"
 import TeamSection from "@/components/team-section"
+import PartnersSection from "@/components/partners-section"
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -269,6 +270,9 @@ export default function Home() {
 
       {/* Team Section */}
       <TeamSection />
+
+      {/* Partners Section */}
+      <PartnersSection />
 
       {/* Pricing Section */}
       <div id="pricing">
