@@ -163,7 +163,7 @@ export default function Home() {
         </div>
 
         <div className="flex items-center gap-4">
-          <a
+          <button
             className="font-medium transition-colors hover:text-foreground text-muted-foreground text-sm cursor-pointer"
             onClick={(e) => {
               e.preventDefault()
@@ -181,7 +181,7 @@ export default function Home() {
             }}
           >
             Connect
-          </a>
+          </button>
 
           <a
             href="/gen-ai-editing"
