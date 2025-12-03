@@ -19,34 +19,6 @@ export function StickyFooter() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
         {/* Main Content */}
         <div className="flex flex-col items-center justify-center text-center space-y-8">
-          {/* Animated Icon */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="relative"
-          >
-            {/* Circular pulse background */}
-            <motion.div
-              className="absolute inset-0 -m-4 rounded-full bg-primary/10 blur-xl"
-              animate={{
-                scale: [1, 1.2, 1],
-                opacity: [0.3, 0.5, 0.3],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            />
-            
-            {/* Icon circle */}
-            <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/30 flex items-center justify-center backdrop-blur-sm">
-              <div className="w-8 h-8 rounded-full bg-primary/80 animate-pulse" />
-            </div>
-          </motion.div>
-
           {/* Main Heading */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -70,9 +42,20 @@ export function StickyFooter() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <motion.a
-              href="#"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-black font-semibold text-lg hover:shadow-[0_0_30px_rgba(231,138,83,0.4)] transition-all duration-300"
+            <motion.button
+              onClick={() => {
+                const element = document.getElementById("connect")
+                if (element) {
+                  const headerOffset = 120
+                  const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
+                  const offsetPosition = elementPosition - headerOffset
+                  window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth",
+                  })
+                }
+              }}
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-black font-semibold text-lg hover:shadow-[0_0_30px_rgba(231,138,83,0.4)] transition-all duration-300 cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -92,7 +75,7 @@ export function StickyFooter() {
                 <path d="M5 12h14"></path>
                 <path d="m12 5 7 7-7 7"></path>
               </svg>
-            </motion.a>
+            </motion.button>
           </motion.div>
 
           {/* Subtitle */}
