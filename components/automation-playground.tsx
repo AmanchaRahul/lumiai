@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { Zap, Cpu, Bot, Settings2, ListChecks, Sparkles, Filter, ClipboardCheck, Boxes, Gauge, Send } from "lucide-react"
+import { GlobeToMapTransform } from "@/components/globe-to-map-transform"
 
 const ORANGE = "#e78a53"
 
@@ -200,6 +201,13 @@ export function AutomationPlayground() {
               transform: "translateY(-50%)",
             } as const
 
+            // Position for the arrow indicator (only for start node)
+            const arrowIndicatorStyle = {
+              left: `${node.x}%`,
+              top: `${node.y + 12}%`,
+              transform: "translateX(-50%)",
+            } as const
+
             // Determine animation variant for this node
             let animateProps: any
             let transitionProps: any
@@ -330,42 +338,52 @@ export function AutomationPlayground() {
               </motion.button>
             )
           })}
-        </div>
-      </div>
 
-      {/* Animated Arrow pointing to CTA */}
-      <div className="mt-8 flex w-full justify-center">
-        <div className="flex flex-col items-center gap-2">
-          <motion.div
-            animate={{
-              y: [-8, 0, -8],
-            }}
-            transition={{
-              duration: 1.5,
-              ease: "easeInOut",
-              repeat: Infinity,
-              repeatType: "loop",
-            }}
-            className="flex flex-col items-center"
-          >
-            <svg
-              width="32"
-              height="32"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="text-[#e78a53]"
+          {/* Animated Arrow indicator - positioned below "Automate with LumiAI" button */}
+          {!isAnimating && !hasCompleted && (
+            <motion.div
+              style={{
+                position: "absolute",
+                left: `calc(${NODE_CONFIG[0].x}% + 75px)`,
+                top: `${NODE_CONFIG[0].y + 12}%`,
+                transform: "translateX(-50%)",
+              }}
+              className="flex flex-col items-center gap-1 pointer-events-none"
             >
-              <path
-                d="M12 19V5M12 5L5 12M12 5L19 12"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </motion.div>
-          <span className="text-xs text-zinc-400 font-medium">Click to start automation</span>
+              <motion.div
+                animate={{
+                  y: [-6, 0, -6],
+                }}
+                transition={{
+                  duration: 1.5,
+                  ease: "easeInOut",
+                  repeat: Infinity,
+                  repeatType: "loop",
+                }}
+                className="flex flex-col items-center"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="text-[#e78a53]"
+                >
+                  <path
+                    d="M12 19V5M12 5L5 12M12 5L19 12"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </motion.div>
+              <span className="text-[10px] sm:text-xs text-zinc-400 font-medium whitespace-nowrap">
+                Click to start automation
+              </span>
+            </motion.div>
+          )}
         </div>
       </div>
 
@@ -388,6 +406,37 @@ export function AutomationPlayground() {
           </div>
         </div>
       </div>
+
+      {/* Interactive Globe to Map Transform */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+        className="mt-16 w-full max-w-6xl mx-auto px-4"
+      >
+        {/* Header */}
+        <div className="flex flex-col gap-2 mb-6 text-center">
+          <h3 className="text-xl sm:text-2xl font-bold text-white">
+            Global Reach Visualization
+          </h3>
+          <p className="text-sm text-zinc-400">
+            Interactive globe showing our worldwide automation services. Drag to rotate, click buttons to transform between views.
+          </p>
+        </div>
+
+        {/* Globe Component - Floating without container */}
+        <div className="flex w-full min-h-[400px] sm:min-h-[500px] justify-center items-center">
+          <GlobeToMapTransform />
+        </div>
+
+        {/* Footer Info */}
+        <div className="mt-6">
+          <p className="text-xs text-zinc-500 text-center">
+            <span className="text-primary font-semibold">Highlighted regions:</span> Countries where we've delivered automation solutions
+          </p>
+        </div>
+      </motion.div>
 
       {/* marquee keyframes */}
       <style jsx>{`

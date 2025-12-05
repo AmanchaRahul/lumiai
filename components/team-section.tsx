@@ -18,25 +18,39 @@ interface TeamMember {
 const teamMembers: TeamMember[] = [
   {
     id: 1,
-    name: "Maneesh Sharma",
-    role: "Co-Founder & AI Architect",
-    story: "Former tech lead at scale-ups, now building automation systems that actually ship. Obsessed with turning complex workflows into elegant code.",
+    name: "VEERLA ANJUDEEP",
+    role: "AI Engineer",
+    story: "4+ years of experience in building AI chatbots, voice agents, and websites. AI Superstack Mentor.",
     linkedin: "https://linkedin.com/in/username",
   },
   {
     id: 2,
-    name: "Anjudeep Singh",
-    role: "Co-Founder & Strategy Lead",
-    story: "Product strategist who translates business problems into automation roadmaps. Spent 5 years optimizing SaaS operations before co-founding LUMI AI.",
-    instagram: "https://instagram.com/username",
+    name: "BOMMAKANTI MANEESH",
+    role: "AI Engineer",
+    story: "AI Creator, No-code/Low-code Developer, R&D AI Specialist, and AI Superstack Mentor.",
     linkedin: "https://linkedin.com/in/username",
+    instagram: "https://instagram.com/username",
   },
   {
     id: 3,
-    name: "Priya Desai",
-    role: "Senior Integration Engineer",
-    story: "API whisperer. Connects disparate systems and makes them talk. Previously built integrations for fintech and healthcare platforms.",
+    name: "VIKAS CHARY ALWALA",
+    role: "Gen AI Specialist",
+    story: "Experienced technology professional with expertise in software development and innovation",
     linkedin: "https://linkedin.com/in/username",
+  },
+  {
+    id: 4,
+    name: "UDAY",
+    role: "Senior Software Engineer / AI Engineer",
+    story: "11+ years of experience in AI, cloud, and enterprise systems. Expert in AI agents, LLMOps, multimodal applications, and GPU-optimized AI workflows.",
+    linkedin: "https://linkedin.com/in/username",
+  },
+  {
+    id: 5,
+    name: "Coming Soon",
+    role: "Team Member",
+    story: "Join our team and help us build the future of AI automation.",
+    linkedin: "",
   },
 ]
 
@@ -58,8 +72,8 @@ export default function TeamSection() {
           </p>
         </div>
 
-        {/* Team Grid - Equal height cards */}
-        <div className="grid md:grid-cols-3 gap-8">
+        {/* Team Grid - Responsive layout with reduced image height */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {teamMembers.map((member, index) => (
             <motion.div
               key={member.id}
@@ -70,12 +84,12 @@ export default function TeamSection() {
               className="group relative"
             >
               {/* Card Container - Clean borders, no glows */}
-              <div className="relative h-full border border-zinc-800 rounded-lg bg-zinc-950 p-8 transition-colors hover:border-zinc-700">
-                {/* Geometric placeholder (when no image) */}
+              <div className="relative h-full border border-zinc-800 rounded-lg bg-zinc-950 p-6 transition-colors hover:border-zinc-700 flex flex-col">
+                {/* Geometric placeholder (when no image) - Reduced height */}
                 {!member.image && (
-                  <div className="relative aspect-[3/4] bg-zinc-900 border border-zinc-800/50 rounded-lg mb-6 overflow-hidden flex items-center justify-center">
+                  <div className="relative aspect-[4/3] bg-zinc-900 border border-zinc-800/50 rounded-lg mb-4 overflow-hidden flex items-center justify-center">
                     {/* Abstract geometric pattern - minimal */}
-                    <div className="relative w-32 h-32">
+                    <div className="relative w-24 h-24">
                       <div className="absolute inset-0 border-2 border-[#e78a53]/20 rotate-45"></div>
                       <div className="absolute inset-4 border-2 border-zinc-700 rotate-45"></div>
                       <div className="absolute inset-8 border-2 border-[#e78a53]/10 rotate-45"></div>
@@ -83,9 +97,9 @@ export default function TeamSection() {
                   </div>
                 )}
 
-                {/* If image exists */}
+                {/* If image exists - Reduced height */}
                 {member.image && (
-                  <div className="relative aspect-[3/4] bg-zinc-900 border border-zinc-800 rounded-lg mb-6 overflow-hidden">
+                  <div className="relative aspect-[4/3] bg-zinc-900 border border-zinc-800 rounded-lg mb-4 overflow-hidden">
                     <img
                       src={member.image}
                       alt={member.name}
@@ -94,23 +108,23 @@ export default function TeamSection() {
                   </div>
                 )}
 
-                {/* Member Info - Left-aligned */}
-                <div className="space-y-4">
+                {/* Member Info - Left-aligned with more space */}
+                <div className="space-y-3 flex-1 flex flex-col">
                   <div>
-                    <h3 className="text-xl font-semibold text-zinc-50 mb-1">
+                    <h3 className="text-lg font-semibold text-zinc-50 mb-1 leading-tight">
                       {member.name}
                     </h3>
-                    <p className="text-sm text-[#e78a53]">{member.role}</p>
+                    <p className="text-sm text-[#e78a53] leading-tight">{member.role}</p>
                   </div>
 
-                  {/* Story text - real context, not generic */}
-                  <p className="text-xs text-zinc-400 leading-relaxed">
+                  {/* Story text - More space for descriptions */}
+                  <p className="text-sm text-zinc-400 leading-relaxed flex-1">
                     {member.story}
                   </p>
 
                   {/* Social Links - Minimal */}
                   {(member.linkedin || member.instagram) && (
-                    <div className="flex items-center gap-3 pt-4 border-t border-zinc-800/50">
+                    <div className="flex items-center gap-3 pt-3 border-t border-zinc-800/50">
                       {member.linkedin && (
                         <a
                           href={member.linkedin}
