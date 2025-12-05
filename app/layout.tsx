@@ -26,7 +26,7 @@ html {
 }
         `}</style>
       </head>
-      <body className="dark">{children}</body>
+      <body className="dark bg-black">{children}</body>
     </html>
   )
 }

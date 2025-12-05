@@ -53,7 +53,7 @@ export default function StudioSection() {
         {/* Gradient orbs */}
         <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-primary/5 via-transparent to-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-transparent rounded-full blur-3xl"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
@@ -65,14 +65,14 @@ export default function StudioSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16 sm:mb-20"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-white/5 to-white/10 border border-white/10 backdrop-blur-sm mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black border border-white/10 backdrop-blur-sm mb-6">
             <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
             <span className="text-sm font-medium text-white/80">Studio</span>
           </div>
 
           <h2
             className={cn(
-              "text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent mb-6",
+              "text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6",
               geist.className,
             )}
           >
@@ -88,7 +88,7 @@ export default function StudioSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="max-w-4xl mx-auto mb-20 sm:mb-28"
         >
-          <div className="relative rounded-3xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 backdrop-blur-sm p-8 sm:p-12 overflow-hidden">
+          <div className="relative rounded-3xl bg-black border border-white/10 backdrop-blur-sm p-8 sm:p-12 overflow-hidden">
             {/* Inner pattern */}
             <div
               className="absolute inset-0 opacity-[0.03]"
@@ -102,7 +102,7 @@ export default function StudioSection() {
             />
 
             {/* Gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent"></div>
+            <div className="absolute inset-0 bg-transparent"></div>
 
             {/* Content */}
             <div className="relative z-10 text-center">
@@ -119,7 +119,7 @@ export default function StudioSection() {
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="mx-auto max-w-xs h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"
+                className="mx-auto max-w-xs h-px bg-primary/50"
               />
             </div>
 
@@ -159,7 +159,7 @@ export default function StudioSection() {
                 className="group relative"
               >
                 {/* Card */}
-                <div className="relative h-full rounded-2xl bg-gradient-to-br from-white/10 to-white/5 border border-white/10 backdrop-blur-sm p-8 overflow-hidden transition-all duration-300 hover:border-primary/40 hover:shadow-[0_0_30px_rgba(231,138,83,0.15)]">
+                <div className="relative h-full rounded-2xl bg-black border border-white/10 backdrop-blur-sm p-8 overflow-hidden transition-all duration-300 hover:border-primary/40 hover:shadow-[0_0_30px_rgba(231,138,83,0.15)]">
                   {/* Inner pattern */}
                   <div
                     className="absolute inset-0 opacity-[0.03] group-hover:opacity-[0.06] transition-opacity"
@@ -173,18 +173,18 @@ export default function StudioSection() {
                   />
 
                   {/* Gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/0 group-hover:from-primary/5 group-hover:to-transparent transition-all duration-300"></div>
+                  <div className="absolute inset-0 bg-transparent transition-all duration-300"></div>
 
                   {/* Content */}
                   <div className="relative z-10">
                     {/* Step Number Badge */}
-                    <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-gradient-to-br from-primary/20 to-primary/10 border border-primary/30 flex items-center justify-center backdrop-blur-sm">
+                    <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-black border border-primary/30 flex items-center justify-center backdrop-blur-sm">
                       <span className="text-primary font-bold text-lg">{step.id}</span>
                     </div>
 
                     {/* Icon */}
                     <motion.div
-                      className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/10 border border-primary/30 flex items-center justify-center mb-6 backdrop-blur-sm"
+                      className="w-16 h-16 rounded-2xl bg-black border border-primary/30 flex items-center justify-center mb-6 backdrop-blur-sm"
                       whileHover={{ scale: 1.05, rotate: 5 }}
                       transition={{ duration: 0.3 }}
                     >

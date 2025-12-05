@@ -64,7 +64,7 @@ export default function ConnectCTASection() {
               geist.className,
             )}
           >
-            <span className="block bg-gradient-to-r from-white via-white to-white/60 bg-clip-text text-transparent">
+            <span className="block text-white">
               Let's Start a Conversation
             </span>
           </h2>
@@ -89,7 +89,7 @@ export default function ConnectCTASection() {
           >
             <motion.a
               href="/connect"
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-primary to-primary/80 text-black font-semibold text-base sm:text-lg shadow-[0_0_20px_rgba(231,138,83,0.3)] hover:shadow-[0_0_40px_rgba(231,138,83,0.5)] transition-all duration-300 group"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-primary text-black font-semibold text-base sm:text-lg shadow-[0_0_20px_rgba(231,138,83,0.3)] hover:shadow-[0_0_40px_rgba(231,138,83,0.5)] transition-all duration-300 group"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -116,7 +116,7 @@ export default function ConnectCTASection() {
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-16 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"
+          className="mt-16 h-px bg-primary/30"
         />
       </div>
     </section>

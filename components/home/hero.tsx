@@ -150,48 +150,47 @@ export default function Hero() {
           >
             <div className="text-center">
               <p className="text-sm text-muted-foreground mb-6">Powered by leading AI & automation technologies</p>
-              <div className="flex items-center justify-center gap-8 flex-wrap">
+              <div className="flex items-center justify-center gap-4 flex-wrap">
                 {/* OpenAI Logo */}
-                <div className="opacity-60 grayscale hover:opacity-100 hover:grayscale-0 hover:drop-shadow-[0_0_8px_rgba(116,220,204,0.5)] transition-all duration-300">
-                  <svg width="32" height="32" viewBox="0 0 24 24" className="h-8 w-8" xmlns="http://www.w3.org/2000/svg">
-                    <path fill="currentColor" d="M22.282 9.821a5.985 5.985 0 0 0-.516-4.91a6.046 6.046 0 0 0-6.51-2.9A6.065 6.065 0 0 0 4.981 4.18a5.985 5.985 0 0 0-3.998 2.9a6.046 6.046 0 0 0 .743 7.097a5.98 5.98 0 0 0 .51 4.911a6.051 6.051 0 0 0 6.515 2.9A5.985 5.985 0 0 0 13.26 24a6.056 6.056 0 0 0 5.772-4.206a5.99 5.99 0 0 0 3.997-2.9a6.056 6.056 0 0 0-.747-7.073zM13.26 22.43a4.476 4.476 0 0 1-2.876-1.04l.141-.081l4.779-2.758a.795.795 0 0 0 .392-.681v-6.737l2.02 1.168a.071.071 0 0 1 .038.052v5.583a4.504 4.504 0 0 1-4.494 4.494zM3.6 18.304a4.47 4.47 0 0 1-.535-3.014l.142.085l4.783 2.759a.771.771 0 0 0 .78 0l5.843-3.369v2.332a.08.08 0 0 1-.033.062L9.74 19.95a4.5 4.5 0 0 1-6.14-1.646zM2.34 7.896a4.485 4.485 0 0 1 2.366-1.973V11.6a.766.766 0 0 0 .388.676l5.815 3.355l-2.02 1.168a.076.076 0 0 1-.071 0l-4.83-2.786A4.504 4.504 0 0 1 2.34 7.872zm16.597 3.855l-5.833-3.387L15.119 7.2a.076.076 0 0 1 .071 0l4.83 2.791a4.494 4.494 0 0 1-.676 8.105v-5.678a.79.79 0 0 0-.407-.667zm2.01-3.023l-.141-.085l-4.774-2.782a.776.776 0 0 0-.785 0L9.409 9.23V6.897a.066.066 0 0 1 .028-.061l4.83-2.787a4.5 4.5 0 0 1 6.68 4.66zm-12.64 4.135l-2.02-1.164a.08.08 0 0 1-.038-.057V6.075a4.5 4.5 0 0 1 7.375-3.453l-.142.08L8.704 5.46a.795.795 0 0 0-.393.681zm1.097-2.365l2.602-1.5l2.607 1.5v2.999l-2.597 1.5l-2.607-1.5z"/>
-                  </svg>
+                <div className="opacity-80 hover:opacity-100 hover:scale-110 hover:drop-shadow-[0_0_12px_rgba(116,220,204,0.6)] transition-all duration-300">
+                  <div className="h-12 w-12 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center p-2">
+                    <img src="/hero_icons/openai.png" alt="OpenAI" className="h-full w-full object-contain" />
+                  </div>
                 </div>
 
                 {/* Python Logo */}
-                <div className="opacity-60 grayscale hover:opacity-100 hover:grayscale-0 hover:drop-shadow-[0_0_8px_rgba(55,118,171,0.5)] transition-all duration-300">
-                  <svg width="32" height="32" viewBox="0 0 24 24" className="h-8 w-8" xmlns="http://www.w3.org/2000/svg">
-                    <path fill="currentColor" d="M9.585 11.692h4.328s2.432.039 2.432-2.35V5.391S16.714 3 11.936 3C7.362 3 7.647 4.983 7.647 4.983l.006 2.055h4.363v.617H5.92s-2.927-.332-2.927 4.282c0 4.613 2.555 4.45 2.555 4.45h1.524v-2.141s-.083-2.554 2.513-2.554zm-.056-5.74a.784.784 0 1 1 0-1.57a.784.784 0 1 1 0 1.57z"/>
-                    <path fill="currentColor" d="M18.452 7.532h-1.524v2.141s.083 2.554-2.513 2.554h-4.328s-2.432-.04-2.432 2.35v3.951s-.369 2.391 4.409 2.391c4.573 0 4.288-1.983 4.288-1.983l-.006-2.054h-4.363v-.617h6.097s2.927.332 2.927-4.282c0-4.614-2.555-4.451-2.555-4.451zm-4.027 10.78a.784.784 0 1 1 0 1.57a.784.784 0 1 1 0-1.57z"/>
-                  </svg>
+                <div className="opacity-80 hover:opacity-100 hover:scale-110 hover:drop-shadow-[0_0_12px_rgba(55,118,171,0.6)] transition-all duration-300">
+                  <div className="h-12 w-12 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center p-2">
+                    <img src="/hero_icons/python.png" alt="Python" className="h-full w-full object-contain" />
+                  </div>
                 </div>
 
                 {/* Make.com Logo */}
-                <div className="opacity-60 grayscale hover:opacity-100 hover:grayscale-0 hover:drop-shadow-[0_0_8px_rgba(109,83,255,0.5)] transition-all duration-300">
-                  <div className="h-8 w-8 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center font-bold text-white text-xs">
-                    M
+                <div className="opacity-80 hover:opacity-100 hover:scale-110 hover:drop-shadow-[0_0_12px_rgba(109,83,255,0.6)] transition-all duration-300">
+                  <div className="h-12 w-12 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center p-2">
+                    <img src="/hero_icons/make.png" alt="Make.com" className="h-full w-full object-contain" />
                   </div>
                 </div>
 
                 {/* N8n Logo */}
-                <div className="opacity-60 grayscale hover:opacity-100 hover:grayscale-0 hover:drop-shadow-[0_0_8px_rgba(234,84,85,0.5)] transition-all duration-300">
-                  <svg width="32" height="32" viewBox="0 0 24 24" className="h-8 w-8" xmlns="http://www.w3.org/2000/svg">
-                    <path fill="currentColor" d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12s12-5.373 12-12S18.627 0 12 0zm5.283 16.641l-3.536 3.536a.749.749 0 0 1-1.061 0l-5.178-5.178a.749.749 0 0 1 0-1.061l3.536-3.536a.749.749 0 0 1 1.061 0l5.178 5.178a.749.749 0 0 1 0 1.061z"/>
-                  </svg>
+                <div className="opacity-80 hover:opacity-100 hover:scale-110 hover:drop-shadow-[0_0_12px_rgba(234,84,85,0.6)] transition-all duration-300">
+                  <div className="h-12 w-12 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center p-2">
+                    <img src="/hero_icons/n8n.png" alt="N8n" className="h-full w-full object-contain" />
+                  </div>
                 </div>
 
                 {/* Twilio Logo */}
-                <div className="opacity-60 grayscale hover:opacity-100 hover:grayscale-0 hover:drop-shadow-[0_0_8px_rgba(244,71,58,0.5)] transition-all duration-300">
-                  <svg width="32" height="32" viewBox="0 0 24 24" className="h-8 w-8" xmlns="http://www.w3.org/2000/svg">
-                    <path fill="currentColor" d="M12 0C5.381 0 0 5.382 0 12s5.381 12 12 12s12-5.382 12-12S18.619 0 12 0zm0 20.837c-4.882 0-8.837-3.955-8.837-8.837S7.118 3.163 12 3.163s8.837 3.955 8.837 8.837s-3.955 8.837-8.837 8.837zM8.415 8.415a1.708 1.708 0 1 1-2.415 2.415a1.708 1.708 0 0 1 2.415-2.415zm0 7.17a1.708 1.708 0 1 1-2.415 2.415a1.708 1.708 0 0 1 2.415-2.415zm7.17-7.17a1.708 1.708 0 1 1 2.415 2.415a1.708 1.708 0 0 1-2.415-2.415zm0 7.17a1.708 1.708 0 1 1 2.415 2.415a1.708 1.708 0 0 1-2.415-2.415z"/>
-                  </svg>
+                <div className="opacity-80 hover:opacity-100 hover:scale-110 hover:drop-shadow-[0_0_12px_rgba(244,71,58,0.6)] transition-all duration-300">
+                  <div className="h-12 w-12 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center p-2">
+                    <img src="/hero_icons/twilio.png" alt="Twilio" className="h-full w-full object-contain" />
+                  </div>
                 </div>
 
                 {/* Next.js Logo */}
-                <div className="opacity-60 grayscale hover:opacity-100 hover:grayscale-0 hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.3)] transition-all duration-300">
-                  <svg width="32" height="32" viewBox="0 0 24 24" className="h-8 w-8 fill-current text-foreground" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11.572 0c-.176 0-.31.001-.358.007a19.76 19.76 0 0 1-.364.033C7.443.346 4.25 2.185 2.228 5.012a11.875 11.875 0 0 0-2.119 5.243c-.096.659-.108.854-.108 1.747s.012 1.089.108 1.748c.652 4.506 3.86 8.292 8.209 9.695.779.25 1.6.422 2.534.525.363.04 1.935.04 2.299 0 1.611-.178 2.977-.577 4.323-1.264.207-.106.247-.134.219-.158-.02-.013-.9-1.193-1.955-2.62l-1.919-2.592-2.404-3.558a338.739 338.739 0 0 0-2.422-3.556c-.009-.002-.018 1.579-.023 3.51-.007 3.38-.01 3.515-.052 3.595a.426.426 0 0 1-.206.214c-.075.037-.14.044-.495.044H7.81l-.108-.068a.438.438 0 0 1-.157-.171l-.05-.106.006-4.703.007-4.705.073-.091a.637.637 0 0 1 .174-.143c.096-.047.134-.051.54-.051.478 0 .558.018.682.154.035.038 1.337 1.999 2.895 4.361a10760.433 10760.433 0 0 0 4.735 7.17l1.9 2.879.096-.063a12.317 12.317 0 0 0 2.466-2.163a11.944 11.944 0 0 0 2.824-6.134c.096-.66.108-.854.108-1.748s-.012-1.088-.108-1.747C23.573 4.569 20.404.779 16.06.269a15.926 15.926 0 0 0-2.231-.116c-.364-.005-.596-.005-.597-.005l-.179.001z"/>
-                  </svg>
+                <div className="opacity-80 hover:opacity-100 hover:scale-110 hover:drop-shadow-[0_0_12px_rgba(255,255,255,0.4)] transition-all duration-300">
+                  <div className="h-12 w-12 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center p-2">
+                    <img src="/hero_icons/nextjs.png" alt="Next.js" className="h-full w-full object-contain" />
+                  </div>
                 </div>
               </div>
             </div>

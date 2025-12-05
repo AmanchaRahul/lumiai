@@ -128,7 +128,7 @@ export function StickyFooter() {
       </div>
 
       {/* Decorative gradient */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-px bg-primary/30"></div>
     </footer>
   )
 }

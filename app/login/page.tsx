@@ -36,7 +36,7 @@ export default function LoginPage() {
       </Link>
 
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 via-black to-zinc-900" />
+      <div className="absolute inset-0 bg-black" />
 
       {/* Decorative elements */}
       <div className="absolute top-20 left-20 w-72 h-72 bg-[#e78a53]/10 rounded-full blur-3xl" />

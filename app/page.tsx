@@ -52,11 +52,11 @@ export default function Home() {
 
   return (
     <div className="min-h-screen w-full relative bg-black">
-      {/* Pearl Mist Background with Top Glow */}
+      {/* Solid Black Background */}
       <div
         className="absolute inset-0 z-0"
         style={{
-          background: "radial-gradient(ellipse 50% 35% at 50% 0%, rgba(226, 232, 240, 0.12), transparent 60%), #000000",
+          background: "#000000",
         }}
       />
 
@@ -185,7 +185,7 @@ export default function Home() {
 
           <a
             href="/gen-ai-editing"
-            className="rounded-md font-bold relative z-50 cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center bg-gradient-to-b from-primary to-primary/80 text-primary-foreground shadow-[0px_2px_0px_0px_rgba(255,255,255,0.3)_inset] px-4 py-2 text-sm"
+            className="rounded-md font-bold relative z-50 cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center bg-primary text-primary-foreground shadow-[0px_2px_0px_0px_rgba(255,255,255,0.3)_inset] px-4 py-2 text-sm"
           >
             Gen AI Editing
           </a>
@@ -260,7 +260,7 @@ export default function Home() {
                 </button>
                 <a
                   href="/gen-ai-editing"
-                  className="px-4 py-3 text-lg font-bold text-center bg-gradient-to-b from-primary to-primary/80 text-primary-foreground rounded-lg shadow-lg hover:-translate-y-0.5 transition-all duration-200"
+                  className="px-4 py-3 text-lg font-bold text-center bg-primary text-primary-foreground rounded-lg shadow-lg hover:-translate-y-0.5 transition-all duration-200"
                 >
                   Gen AI Editing
                 </a>

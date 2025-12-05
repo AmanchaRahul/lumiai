@@ -102,7 +102,7 @@ export function AutomationPlayground() {
       <div className="mb-8 flex w-full flex-col items-center justify-center text-center">
         <h2
           className={cn(
-            "bg-gradient-to-b from-zinc-50 via-zinc-200 to-zinc-400 bg-clip-text text-3xl font-semibold tracking-tight text-transparent sm:text-4xl md:text-5xl",
+            "text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl",
           )}
         >
           Live Automation Flow
@@ -188,11 +188,11 @@ export function AutomationPlayground() {
             const Icon = node.Icon
 
             const baseGlow =
-              "shadow-[0_0_6px_rgba(15,23,42,0.8)] ring-1 ring-white/10 bg-gradient-to-br from-black/95 via-zinc-900/90 to-slate-900/80"
+              "shadow-[0_0_6px_rgba(15,23,42,0.8)] ring-1 ring-white/10 bg-black"
 
             const isOrangeCTA = isStart || (isFinal && hasCompleted)
             const nodeBgClass = isOrangeCTA
-              ? "bg-gradient-to-r from-[#f97316] to-[#fb923c] text-slate-950"
+              ? "bg-primary text-slate-950"
               : baseGlow
 
             const positionStyle = {
@@ -325,7 +325,7 @@ export function AutomationPlayground() {
                   </div>
                 ) : (
                   <>
-                    <div className="relative flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-black via-zinc-900 to-slate-900 ring-1 ring-white/10">
+                    <div className="relative flex h-6 w-6 items-center justify-center rounded-full bg-black ring-1 ring-white/10">
                       <Icon className="h-3.5 w-3.5 text-zinc-100" />
                     </div>
                     <div className="flex flex-col">
@@ -390,8 +390,8 @@ export function AutomationPlayground() {
       {/* Country ticker below nodes */}
       <div className="mt-6 flex w-full justify-center">
         <div className="relative w-full max-w-4xl overflow-hidden">
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-black to-transparent" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-black to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-black" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-black" />
 
           <div className="flex gap-8 animate-[marquee_12s_linear_infinite] whitespace-nowrap text-xs sm:text-sm text-muted-foreground">
             {[...COUNTRY_TICKER, ...COUNTRY_TICKER, ...COUNTRY_TICKER].map((country, idx) => (

@@ -53,7 +53,7 @@ export default function Features() {
       >
         <h2
           className={cn(
-            "via-foreground mb-8 bg-gradient-to-b from-zinc-800 to-zinc-700 bg-clip-text text-center text-4xl font-semibold tracking-tighter text-transparent md:text-[54px] md:leading-[60px]",
+            "mb-8 text-center text-4xl font-semibold tracking-tighter text-white md:text-[54px] md:leading-[60px]",
             geist.className,
           )}
         >
@@ -469,7 +469,7 @@ export default function Features() {
                       alt="Dynamic Layout Example"
                       className="w-full h-auto rounded-lg shadow-lg"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg"></div>
+                    <div className="absolute inset-0 bg-transparent rounded-lg"></div>
                   </div>
                 </div>
               </motion.div>

@@ -111,7 +111,7 @@ export default function WorksSection() {
         <div className="mb-12 flex w-full flex-col items-center justify-center text-center">
           <h2
             className={cn(
-              "bg-gradient-to-b from-zinc-50 via-zinc-200 to-zinc-400 bg-clip-text text-3xl font-semibold tracking-tight text-transparent sm:text-4xl md:text-5xl",
+              "text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl",
             )}
           >
             Projects That Made Impact

@@ -148,7 +148,7 @@ export default function CapabilitiesSection() {
         <div className="mb-12 flex w-full flex-col items-center justify-center text-center">
           <h2
             className={cn(
-              "bg-gradient-to-b from-zinc-50 via-zinc-200 to-zinc-400 bg-clip-text text-3xl font-semibold tracking-tight text-transparent sm:text-4xl md:text-5xl",
+              "text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl",
             )}
           >
             What We Build
@@ -176,11 +176,11 @@ export default function CapabilitiesSection() {
                   onClick={() => setSelectedCapability(isExpanded ? null : capability.id)}
                   onMouseEnter={() => setHoveredId(capability.id)}
                   onMouseLeave={() => setHoveredId(null)}
-                  className="relative bg-zinc-950 border border-zinc-800 rounded-lg p-6 cursor-pointer group transition-colors duration-300 hover:border-zinc-700"
+                  className="relative bg-black border border-zinc-800 rounded-lg p-6 cursor-pointer group transition-colors duration-300 hover:border-zinc-700"
                 >
                   {/* Icon */}
                   <div className="mb-4">
-                    <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-zinc-900 border border-zinc-800">
+                    <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black border border-zinc-800">
                       <Icon className="w-5 h-5 text-[#e78a53]" />
                     </div>
                   </div>

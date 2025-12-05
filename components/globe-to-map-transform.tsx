@@ -50,6 +50,7 @@ export function GlobeToMapTransform() {
   const [translation, setTranslation] = useState([0, 0])
   const [isDragging, setIsDragging] = useState(false)
   const [lastMouse, setLastMouse] = useState([0, 0])
+  const autoRotateRef = useRef<number | null>(null)
 
   const width = 800
   const height = 500
@@ -92,6 +93,34 @@ export function GlobeToMapTransform() {
 
     loadWorldData()
   }, [])
+
+  // Auto-rotation effect for globe
+  useEffect(() => {
+    const t = progress[0] / 100
+    
+    // Only auto-rotate when in globe mode (t < 0.5) and not dragging or animating
+    if (t < 0.5 && !isDragging && !isAnimating) {
+      const startRotation = () => {
+        autoRotateRef.current = window.setInterval(() => {
+          setRotation((prev) => [(prev[0] + 0.3) % 360, prev[1]])
+        }, 50)
+      }
+      
+      startRotation()
+      
+      return () => {
+        if (autoRotateRef.current) {
+          clearInterval(autoRotateRef.current)
+          autoRotateRef.current = null
+        }
+      }
+    } else {
+      if (autoRotateRef.current) {
+        clearInterval(autoRotateRef.current)
+        autoRotateRef.current = null
+      }
+    }
+  }, [progress, isDragging, isAnimating])
 
   const handleMouseDown = (event: React.MouseEvent) => {
     setIsDragging(true)
