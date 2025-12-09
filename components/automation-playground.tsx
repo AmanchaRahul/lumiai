@@ -114,30 +114,47 @@ export function AutomationPlayground() {
 
       {/* Infinite-style canvas */}
       <div className="relative mx-auto h-[480px] w-full max-w-7xl overflow-x-auto md:overflow-visible">
-        <div className="relative h-full min-w-[960px] md:min-w-full">
+        <div className="relative h-full min-w-[960px] md:min-w-full" style={{ contain: 'layout', position: 'relative' }}>
           {/* Connections (edges) */}
           <svg
-            className="absolute inset-0 h-full w-full"
+            className="absolute inset-0 h-full w-full pointer-events-none"
             viewBox="0 0 100 100"
             preserveAspectRatio="none"
             aria-hidden="true"
+            style={{ 
+              pointerEvents: 'none',
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%'
+            }}
           >
             {EDGES.map((edge, index) => {
               const from = NODE_CONFIG[edge.from]
               const to = NODE_CONFIG[edge.to]
               const isActive = isAnimating && maxActive >= to.id
 
-              // Fully connected orthogonal paths (allowing overlap with borders)
-              let d: string
+              // Calculate connection points at the center of each node
+              // Nodes are positioned with top: y% and transform: translateY(-50%)
+              // This means the visual center is at y% in the SVG coordinate system
+              // SVG viewBox is "0 0 100 100" matching the percentage-based positioning
+              const fromY = from.y
+              const toY = to.y
+              
+              // X coordinates - connect from right edge of source to left edge of target
               const startX = from.x
               const endX = to.x
+              
+              // Fully connected orthogonal paths connecting to node centers vertically
+              let d: string
 
               if (to.id === NODE_CONFIG[NODE_CONFIG.length - 1].id) {
                 // Two-segment path into the final button (V-H)
-                d = `M ${startX} ${from.y} V ${to.y} H ${endX}`
+                d = `M ${startX} ${fromY} V ${toY} H ${endX}`
               } else {
                 const midX = startX + (endX - startX) * 0.5
-                d = `M ${startX} ${from.y} H ${midX} V ${to.y} H ${endX}`
+                d = `M ${startX} ${fromY} H ${midX} V ${toY} H ${endX}`
               }
 
               return (
@@ -195,10 +212,10 @@ export function AutomationPlayground() {
               ? "bg-primary text-slate-950"
               : baseGlow
 
+            // Position nodes with their center aligned to the y coordinate
             const positionStyle = {
               left: `${node.x}%`,
               top: `${node.y}%`,
-              transform: "translateY(-50%)",
             } as const
 
             // Position for the arrow indicator (only for start node)
@@ -216,6 +233,7 @@ export function AutomationPlayground() {
               // Pre-flow: strong orange heartbeat on start button
               animateProps = {
                 scale: [1, 1.06, 1],
+                y: "-50%",
                 boxShadow: [
                   "0 0 0 rgba(249,115,22,0.0)",
                   "0 0 28px rgba(249,115,22,0.95)",
@@ -232,6 +250,7 @@ export function AutomationPlayground() {
               // Post-flow: very strong orange heartbeat on final button to attract clicks
               animateProps = {
                 scale: [1, 1.3, 1],
+                y: "-50%",
                 boxShadow: [
                   "0 0 0 rgba(249,115,22,0.0)",
                   "0 0 42px rgba(249,115,22,1)",
@@ -248,6 +267,7 @@ export function AutomationPlayground() {
               // During flow: electric blue pulse on the current node
               animateProps = {
                 scale: [1, 1.07, 1],
+                y: "-50%",
                 boxShadow: [
                   "0 0 0 rgba(56,189,248,0.0)",
                   "0 0 36px rgba(56,189,248,0.98)",
@@ -262,6 +282,7 @@ export function AutomationPlayground() {
               // Nodes already hit by the surge: keep a stable electric blue glow
               animateProps = {
                 scale: 1,
+                y: "-50%",
                 boxShadow: "0 0 20px rgba(56,189,248,0.7)",
               }
               transitionProps = {
@@ -272,6 +293,7 @@ export function AutomationPlayground() {
               // Idle nodes
               animateProps = {
                 scale: 1,
+                y: "-50%",
                 boxShadow: "0 0 6px rgba(15,23,42,0.8)",
               }
               transitionProps = {
@@ -288,7 +310,7 @@ export function AutomationPlayground() {
                   isStart
                     ? handleStart
                     : isFinal && hasCompleted
-                      ? () => (window.location.href = "mailto:ailumi333@gmail.com")
+                      ? () => window.open("https://wa.link/dmvkw2", "_blank")
                       : undefined
                 }
                 style={positionStyle}
@@ -296,13 +318,14 @@ export function AutomationPlayground() {
                   "absolute flex min-w-[150px] max-w-[260px] items-center gap-2 border border-white/15 px-3 py-1.5 text-left text-[11px] sm:px-4 sm:py-2 sm:text-xs font-serif",
                   "backdrop-blur-xl transition-all duration-300 rounded-[6px]",
                   nodeBgClass,
-                  isStart && "cursor-pointer hover:-translate-y-[1px]",
+                  isStart && "cursor-pointer",
                   isFinal && !hasCompleted && "cursor-default opacity-60",
-                  isFinal && hasCompleted && "cursor-pointer hover:-translate-y-[1px]",
+                  isFinal && hasCompleted && "cursor-pointer",
                 )}
-                whileHover={{ scale: 1.02 }}
+                whileHover={{ scale: 1.02, y: "-50%" }}
                 animate={animateProps}
                 transition={transitionProps}
+                initial={{ y: "-50%" }}
               >
                 {/* Node content */}
                 {isStart || isFinal ? (
